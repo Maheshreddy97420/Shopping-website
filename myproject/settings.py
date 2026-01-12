@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-e^7tj_%55de^e-ldb2tq-0v90r$_&v2h8765jubtj(j9#*e$rl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'shopping-website-jdt2.onrender.com','.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
