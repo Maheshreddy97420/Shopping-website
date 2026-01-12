@@ -123,3 +123,7 @@ def support(request):
 
 def proceed(request):
     return render(request,'proceed.html')
+
+def details(request,pk):
+    a=Products.objects.get(id=pk)
+    return render(request,'details.html',{"a":a})

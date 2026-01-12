@@ -1,0 +1,134 @@
+.details-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e6f6f7, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.details-card {
+    background: white;
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.details-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.product-name {
+    font-size: 28px;
+}
+
+.product-category {
+    font-size: 14px;
+    color: #666;
+}
+
+.product-category span {
+    color: #159eab;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 26px;
+    color: #159eab;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-features li {
+    margin-bottom: 6px;
+}
+
+.in-stock {
+    color: green;
+    font-weight: bold;
+}
+
+/* Quantity */
+.quantity-section {
+    margin: 15px 0 25px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.qty-control input {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.qty-btn.minus {
+    background-color: #e74c3c;
+}
+
+.qty-btn.plus {
+    background-color: #2ecc71;
+}
+
+/* Buttons */
+.details-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.add-cart {
+    background: #159eab;
+    color: white;
+}
+
+.back {
+    background: #f0f0f0;
+    color: #333;
+}
+
+@media (max-width: 900px) {
+    .details-card {
+        grid-template-columns: 1fr;
+    }
+}

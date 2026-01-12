@@ -11,6 +11,7 @@ urlpatterns=[
     path("knowus/",knowus,name="knowus"),
     path("support/",support,name="support"),
     path("proceed/",proceed,name="proceed"),
+    path("details/<int:pk>",details,name="details"),
 
     
     

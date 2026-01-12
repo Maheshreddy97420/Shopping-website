@@ -17,35 +17,47 @@
     <a href="{% url 'home' %}" class="all-btn">All Products</a>
 </div>
 
-<!-- Headings -->
-{% if trend %}
-    <h2 class="section-title">🔥 Trending Now</h2>
-{% endif %}
-
-{% if offer %}
-    <h2 class="section-title">💸 Offers Available</h2>
+<!-- Page Heading -->
+{% if request.GET.trending %}
+    <h2 class="section-title">🔥 Trending Products</h2>
+{% elif request.GET.offer %}
+    <h2 class="section-title">💸 Offer Products</h2>
+{% else %}
+    <h2 class="section-title">🛍️ All Products</h2>
 {% endif %}
 
 {% if nomatch %}
     <h3 class="no-products">No products found!</h3>
 {% endif %}
 
-<!-- Products -->
+<!-- Products Grid -->
 <div class="product-grid">
+
     {% for i in all_products %}
-        <div class="product-card">
-            <img src="{{ i.pimage.url }}" alt="{{ i.pname }}">
+    <div class="product-card">
 
-            <h3>{{ i.pname }}</h3>
-            <p>{{ i.pdesc }}</p>
-            <p class="price">₹ {{ i.price }}</p>
+        <!-- PRODUCT LABELS -->
+        {% if i.is_trending %}
+            <span class="badge trending">🔥 Trending</span>
+        {% endif %}
 
-            <div class="actions">
-                <a href="{% url 'addtocart' i.id %}" class="btn add">Add to Cart</a>
-                <a href="#" class="btn details">Details</a>
-            </div>
+        {% if i.is_offer %}
+            <span class="badge offer">💸 Offer</span>
+        {% endif %}
+
+        <img src="{{ i.pimage.url }}" alt="{{ i.pname }}">
+
+        <h3>{{ i.pname }}</h3>
+        <p>{{ i.pdesc }}</p>
+        <p class="price">₹ {{ i.price }}</p>
+
+        <div class="actions">
+            <a href="{% url 'addtocart' i.id %}" class="btn add">Add to Cart</a>
+            <a href="{% url 'details' i.id %}" class="btn details">Details</a>
         </div>
+    </div>
     {% endfor %}
+
 </div>
 
 {% endblock %}

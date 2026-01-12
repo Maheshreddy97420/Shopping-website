@@ -1,121 +1,162 @@
-/* Category bar */
+/* ---------- Page Basics ---------- */
+body {
+    background: #f4f7f8;
+}
+
+/* ---------- Category Bar ---------- */
 .category-bar {
     display: flex;
-    gap: 10px;
-    padding: 15px;
-    background-color: #f4f6f8;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 40px;
+    justify-content: center;
 }
 
 .category-bar form button,
-.all-btn {
-    padding: 8px 14px;
-    border: none;
+.category-bar .all-btn {
+    padding: 8px 16px;
     border-radius: 20px;
-    background-color: #159eab;
+    border: none;
+    background: #159eab;
     color: white;
     cursor: pointer;
+    font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease;
 }
 
 .category-bar form button:hover,
-.all-btn:hover {
-    background-color: #117d88;
+.category-bar .all-btn:hover {
+    background: #0f7f89;
 }
 
-/* Section titles */
+/* ---------- Section Titles ---------- */
 .section-title {
     text-align: center;
     margin: 20px 0;
-    color: #333;
+    font-size: 26px;
 }
 
-/* No products */
 .no-products {
     text-align: center;
-    color: red;
+    color: #777;
+    margin-top: 40px;
 }
 
-/* Product grid */
+/* ---------- Product Grid ---------- */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 20px 40px 60px;
 }
 
-
-/* Product card */
+/* ---------- Product Card ---------- */
 .product-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: white;
+    border-radius: 16px;
     padding: 15px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
+/* ---------- Product Image ---------- */
 .product-card img {
     width: 100%;
-    aspect-ratio: 4 / 3;   /* 🔥 prevents long images */
+    height: 220px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
+    margin-bottom: 10px;
 }
 
-
-/* Product text */
+/* ---------- Product Text ---------- */
 .product-card h3 {
-    margin: 10px 0 5px;
+    margin: 8px 0 4px;
+    font-size: 18px;
 }
 
 .product-card p {
     font-size: 14px;
-    color: #555;
+    color: #666;
 }
 
-.price {
-    font-size: 16px;
+.product-card .price {
+    font-size: 18px;
     font-weight: bold;
     color: #159eab;
+    margin: 6px 0;
 }
 
-/* Buttons */
+/* ---------- Actions ---------- */
 .actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 12px;
 }
 
-.btn {
-    padding: 6px 10px;
-    border-radius: 5px;
+.actions .btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
     text-decoration: none;
+    font-weight: bold;
     font-size: 14px;
-    transition: background-color 0.3s;
+    text-align: center;
 }
 
-.btn.add {
-    background-color: #159eab;
+/* Add to Cart */
+.actions .btn.add {
+    background: #159eab;
     color: white;
 }
 
-.btn.add:hover {
-    background-color: #117d88;
-}
-
-.btn.details {
-    background-color: #e0e0e0;
+/* Details */
+.actions .btn.details {
+    background: #eaeaea;
     color: #333;
 }
 
-.btn.details:hover {
-    background-color: #ccc;
+/* ---------- BADGES ---------- */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+    z-index: 5;
+}
+
+/* Trending Badge */
+.badge.trending {
+    background-color: #ff4757;
+}
+
+/* Offer Badge */
+.badge.offer {
+    background-color: #2ed573;
+    top: 42px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .product-grid {
+        padding: 20px;
+    }
+
+    .category-bar {
+        padding: 15px;
+    }
 }
 
 

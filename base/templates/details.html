@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'details.css' %}">
+{% endblock %}
+
+{% block html %}
+
+<div class="details-wrapper">
+
+    <div class="details-card">
+
+        <!-- Product Image -->
+        <div class="details-image">
+            <img src="{{ a.pimage.url }}" alt="{{ a.pname }}">
+        </div>
+
+        <!-- Product Info -->
+        <div class="details-info">
+
+            <h1 class="product-name">{{ a.pname }}</h1>
+
+            <p class="product-category">
+                Category: <span>{{ a.pcategory }}</span>
+            </p>
+
+            <p class="product-price">₹ {{ a.price }}</p>
+
+            <p class="product-desc">{{ a.pdesc }}</p>
+
+            <!-- Features -->
+            <ul class="product-features">
+                <li>✔ High quality product</li>
+                <li>✔ 100% genuine</li>
+                <li>✔ Easy return policy</li>
+                <li>✔ Fast delivery</li>
+            </ul>
+
+            <p class="availability">
+                Availability: <span class="in-stock">In Stock</span>
+            </p>
+
+            <!-- FORM -->
+            <form method="post" action="{% url 'addtocart' a.id %}">
+                {% csrf_token %}
+
+                <!-- Quantity Selector -->
+                <div class="quantity-section">
+                    <p class="qty-title">Quantity</p>
+
+                    <div class="qty-control">
+                        <button type="button" class="qty-btn minus" onclick="decreaseQty()">−</button>
+
+                        <input type="text" id="quantity" name="quantity" value="1" readonly>
+
+                        <button type="button" class="qty-btn plus" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="details-actions">
+                    <button type="submit" class="btn add-cart">
+                        Add to Cart
+                    </button>
+
+                    <a href="{% url 'home' %}" class="btn back">
+                        Continue Shopping
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    let qtyInput = document.getElementById("quantity");
+
+    function increaseQty() {
+        qtyInput.value = parseInt(qtyInput.value) + 1;
+    }
+
+    function decreaseQty() {
+        if (parseInt(qtyInput.value) > 1) {
+            qtyInput.value = parseInt(qtyInput.value) - 1;
+        }
+    }
+</script>
+
+{% endblock %}
