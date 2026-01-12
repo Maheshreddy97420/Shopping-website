@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block html %}
+
+<!-- Category Bar -->
+<div class="category-bar">
+    {% for i in category %}
+        <form method="get">
+            <button type="submit" name="cat" value="{{ i }}">{{ i }}</button>
+        </form>
+    {% endfor %}
+    <a href="{% url 'home' %}" class="all-btn">All Products</a>
+</div>
+
+<!-- Headings -->
+{% if trend %}
+    <h2 class="section-title">🔥 Trending Now</h2>
+{% endif %}
+
+{% if offer %}
+    <h2 class="section-title">💸 Offers Available</h2>
+{% endif %}
+
+{% if nomatch %}
+    <h3 class="no-products">No products found!</h3>
+{% endif %}
+
+<!-- Products -->
+<div class="product-grid">
+    {% for i in all_products %}
+        <div class="product-card">
+            <img src="{{ i.pimage.url }}" alt="{{ i.pname }}">
+
+            <h3>{{ i.pname }}</h3>
+            <p>{{ i.pdesc }}</p>
+            <p class="price">₹ {{ i.price }}</p>
+
+            <div class="actions">
+                <a href="{% url 'addtocart' i.id %}" class="btn add">Add to Cart</a>
+                <a href="#" class="btn details">Details</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

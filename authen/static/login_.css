@@ -1,0 +1,90 @@
+/* Full page background */
+.login-wrapper {
+    min-height: 100vh;
+    background-color:linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+}
+
+/* Login box */
+.login-container {
+    width: 360px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Title */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #159eab;
+}
+
+/* Status message */
+.status {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Form */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #159eab;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #159eab;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #117d88;
+    transform: translateY(-2px);
+}
+
+/* Links */
+.links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    text-decoration: none;
+    color: #159eab;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

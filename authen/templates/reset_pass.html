@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'reset_password.css' %}">
+{% endblock %}
+
+{% block html %}
+<div class="reset-wrapper">
+    <div class="reset-card">
+        <h2>Reset Password</h2>
+
+        {% if status %}
+            <p class="status-msg">{{ status }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Old Password</label>
+                <input type="password" name="oldpass" required>
+            </div>
+
+            <div class="form-group">
+                <label>New Password</label>
+                <input type="password" name="newpass" required>
+            </div>
+
+            <div class="form-group">
+                <label>Re-enter New Password</label>
+                <input type="password" name="renewpass" required>
+            </div>
+
+            <button type="submit">Update Password</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

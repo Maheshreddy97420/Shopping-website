@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+{% endblock %}
+
+{% block html %}
+<div class="profile-wrapper">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="avatar">
+                {{ user.first_name|slice:":1"|upper }}
+            </div>
+            <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+            <p class="username">@{{ user.username }}</p>
+        </div>
+
+        <div class="profile-details">
+            <div class="detail">
+                <span>First Name</span>
+                <p>{{ user.first_name }}</p>
+                <span>Last Name</span>
+                <p>{{ user.last_name }}</p>
+                <span>Email</span>
+                <p>{{ user.email }}</p>
+            </div>
+
+            <div class="detail">
+                <span>Status</span>
+                <p>
+                    {% if user.is_authenticated %}
+                        Active
+                    {% else %}
+                        Inactive
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="{% url 'update' %}" class="btn primary">Update Profile</a>
+            <a href="{% url 'reset_pass' %}" class="btn secondary">Reset Password</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

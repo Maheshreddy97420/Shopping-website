@@ -1,0 +1,71 @@
+<nav>
+    <div id="logo">
+        <h2>ShopSphere</h2>
+    </div>
+    <div id="links">
+        {% if request.user.is_authenticated %}
+            {% if profile_nav %}
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'cart' %}" class="cart-link">Cart<sup>{{cartproduct_count}}</sup></a>
+                <a href="{% url 'profile' %}">Profile({{request.user}})</a>
+                <a href="{% url 'logout_' %}">Logout</a>
+                <a href="">Support</a>
+                <a href="">Know us</a>
+                
+            {% else %}
+                <form >   
+                    <input type="text" name="q" placeholder="Search"> 
+                    <input type="submit" value="search"> 
+                </form>
+
+                <!-- Trending Button -->
+                <form id="trend">
+                    <input type="submit" value="Trending" name="trending">
+                </form>
+
+                <!-- Offer Button -->
+                <form id="offer">
+                    <input type="submit" value="Offer" name="offer">
+                </form>
+
+
+
+
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'cart' %}" class="cart-link">Cart <sup>{{cartproduct_count}}</sup></a>
+                <a href="{% url 'profile' %}">Profile({{request.user}})</a>
+                <a href="{% url 'logout_' %}">Logout</a>
+                <a href="">Support</a>
+                <a href="">Know Us</a>
+            {% endif %}
+        {% else %}
+                {% if login_nav %}
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'login_' %}">Login</a>
+                    <a href="">Know us</a>
+                    <a href="">Support</a>
+                {% else %}
+                    <form >  
+                        <input type="text" name="q" placeholder="Search"> 
+                            <input type="submit" value="search"> 
+                    </form>
+
+                    <!-- Trending Button -->
+                    <form id="trend">
+                        <input type="submit" value="Trending" name="trending">
+                    </form>
+
+                    <!-- Offer Button -->
+                    <form id="offer">
+                        <input type="submit" value="Offer" name="offer">
+                    </form>
+
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'login_' %}">Login</a>
+                    <a href="">Know us</a>
+                    <a href="">Support</a>
+                {% endif %}
+        {% endif %}
+    </div>
+
+</nav>
