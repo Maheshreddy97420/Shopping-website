@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'proceed.css' %}">
+{% endblock %}
+
+{% block html %}
+
+<div class="proceed-wrapper">
+
+    <div class="proceed-card">
+
+        <!-- Icon -->
+        <div class="proceed-icon">
+            💳 🚧
+        </div>
+
+        <!-- Title -->
+        <h2>Payment Gateway Taking a Tea Break ☕</h2>
+
+        <!-- Message -->
+        <p class="main-msg">
+            Oops! Our payment system is currently under construction.
+        </p>
+
+        <p class="sub-msg">
+            The developers are busy teaching it how to count money 💰<br>
+            Please don’t worry — your cart is safe and sound 🛒✨
+        </p>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            👨‍💻 Engineers at work...
+        </div>
+
+        <!-- Button -->
+        <a href="{% url 'home' %}" class="back-btn">
+            ← Go Back & Continue Shopping
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

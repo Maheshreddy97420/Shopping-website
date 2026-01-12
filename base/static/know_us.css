@@ -1,0 +1,78 @@
+/* Page container */
+.knowus-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.knowus-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.knowus-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.knowus-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Cards */
+.knowus-card {
+    background-color: white;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.knowus-card h3 {
+    color: rgb(20, 158, 171);
+    margin-bottom: 10px;
+}
+
+.knowus-card p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* List */
+.knowus-card ul {
+    padding-left: 18px;
+}
+
+.knowus-card ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* Highlight section */
+.knowus-highlight {
+    background-color: #fff3e0;
+    padding: 24px;
+    border-radius: 14px;
+    border-left: 6px solid rgb(20, 158, 171);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.knowus-highlight h3 {
+    color: rgb(20, 158, 171);
+    margin-bottom: 10px;
+}
+
+.knowus-highlight p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .knowus-header h1 {
+        font-size: 26px;
+    }
+}

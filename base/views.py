@@ -70,6 +70,7 @@ def addtocart(request,pk):
             pcategory =product.pcategory,
             quantity = 1,
             totalPrice =product.price,
+            pimage=product.pimage,
             host =request.user
 
         )
@@ -114,3 +115,11 @@ def decrease(request,pk):
         return redirect('cart')
     return redirect('cart')
 
+def knowus(request):
+    return render(request,'knowus.html',{"profile_nav":True})
+
+def support(request):
+    return render(request,'support.html',{"profile_nav":True})
+
+def proceed(request):
+    return render(request,'proceed.html')

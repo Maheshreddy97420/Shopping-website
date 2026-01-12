@@ -9,8 +9,8 @@
                 <a href="{% url 'cart' %}" class="cart-link">Cart<sup>{{cartproduct_count}}</sup></a>
                 <a href="{% url 'profile' %}">Profile({{request.user}})</a>
                 <a href="{% url 'logout_' %}">Logout</a>
-                <a href="">Support</a>
-                <a href="">Know us</a>
+                <a href="{% url 'support' %}">Support</a>
+                <a href="{% url 'knowus' %}">Know us</a>
                 
             {% else %}
                 <form >   
@@ -35,15 +35,15 @@
                 <a href="{% url 'cart' %}" class="cart-link">Cart <sup>{{cartproduct_count}}</sup></a>
                 <a href="{% url 'profile' %}">Profile({{request.user}})</a>
                 <a href="{% url 'logout_' %}">Logout</a>
-                <a href="">Support</a>
-                <a href="">Know Us</a>
+                <a href="{% url 'support' %}">Support</a>
+                <a href="{% url 'knowus' %}">Know Us</a>
             {% endif %}
         {% else %}
                 {% if login_nav %}
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'login_' %}">Login</a>
-                    <a href="">Know us</a>
-                    <a href="">Support</a>
+                    <a href="{% url 'knowus' %}">Know us</a>
+                    <a href="{% url 'support' %}">Support</a>
                 {% else %}
                     <form >  
                         <input type="text" name="q" placeholder="Search"> 
@@ -62,8 +62,8 @@
 
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'login_' %}">Login</a>
-                    <a href="">Know us</a>
-                    <a href="">Support</a>
+                    <a href="{% url 'knowus' %}">Know us</a>
+                    <a href="{% url 'support' %}">Support</a>
                 {% endif %}
         {% endif %}
     </div>

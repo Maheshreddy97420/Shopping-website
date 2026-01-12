@@ -19,4 +19,5 @@ class CartModel(models.Model):
     pcategory=models.CharField(max_length=100)
     quantity=models.IntegerField()
     totalPrice=models.IntegerField()
+    pimage=models.ImageField(default="wall.jpg",upload_to="cart_product")
     host =models.ForeignKey(User,on_delete=models.CASCADE)

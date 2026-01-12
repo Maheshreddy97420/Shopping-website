@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'know_us.css' %}">
+{% endblock %}
+
+{% block html %}
+
+<div class="knowus-container">
+
+    <!-- Page Title -->
+    <div class="knowus-header">
+        <h1>Know Us</h1>
+        <p>More than shopping we’re building trust, convenience & quality.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="knowus-card">
+        <h3>🛍️ Who We Are</h3>
+        <p>
+            <strong>ShopSphere</strong> is a modern e-commerce platform designed
+            to make online shopping simple, fast, and reliable. From electronics
+            to fashion and daily essentials, we bring everything to one place,
+            just a click away.
+        </p>
+    </div>
+
+    <div class="knowus-card">
+        <h3>🎯 Our Mission</h3>
+        <p>
+            Our mission is to provide high-quality products at honest prices,
+            delivered with speed and care while creating a smooth and enjoyable
+            shopping experience for every user.
+        </p>
+    </div>
+
+    <div class="knowus-card">
+        <h3>⭐ Why Choose ShopSphere?</h3>
+        <ul>
+            <li>Carefully curated and trending products</li>
+            <li>Secure and user-friendly platform</li>
+            <li>Transparent pricing with exciting offers</li>
+            <li>Built using modern technologies</li>
+        </ul>
+    </div>
+
+    <div class="knowus-card">
+        <h3>💻 Built With Technology</h3>
+        <p>
+            ShopSphere is powered by <strong>Django</strong>, modern front-end
+            design, and scalable architecture to ensure performance, security,
+            and reliability.
+        </p>
+    </div>
+
+    <!-- Highlight Section -->
+    <div class="knowus-highlight">
+        <h3>🚀 What’s Coming Next?</h3>
+        <p>
+            We’re actively working on secure payment gateways, order tracking,
+            personalized recommendations, and much more.
+        </p>
+        <p><strong>Stay tuned!! The best is yet to come!</strong></p>
+    </div>
+
+</div>
+
+{% endblock %}
+

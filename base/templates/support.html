@@ -1,0 +1,89 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'support.css' %}">
+{% endblock %}
+
+{% block html %}
+
+<div class="support-container">
+
+    <!-- Header -->
+    <div class="support-header">
+        <h1>Support Center</h1>
+        <p>Need help? Don’t worry!! We’ve got your back 😊</p>
+    </div>
+
+    <!-- Support Cards -->
+    <div class="support-cards">
+
+        <div class="support-card">
+            <h3>📦 Order Issues</h3>
+            <p>
+                Facing issues with orders, delivery delays, or wrong products?
+                We’ll help you sort it out quickly.
+            </p>
+        </div>
+
+        <div class="support-card">
+            <h3>💳 Payment & Refunds</h3>
+            <p>
+                Payment failed? Refund not received?
+                Our team is here to assist you step by step.
+            </p>
+        </div>
+
+        <div class="support-card">
+            <h3>🔐 Account Help</h3>
+            <p>
+                Forgot password, login issues, or profile updates?
+                Let us help you regain access smoothly.
+            </p>
+        </div>
+
+        <div class="support-card">
+            <h3>🛒 Cart & Checkout</h3>
+            <p>
+                Trouble adding items to cart or checking out?
+                We’ll fix it faster than you can say “ShopSphere”.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-box">
+        <h3>📞 Contact Us</h3>
+        <p><strong>Email:</strong> support@shopsphere.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Support Hours:</strong> Mon – Sat (9 AM – 8 PM)</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div class="faq-card">
+            <h4>How long does delivery take?</h4>
+            <p>Usually 3–5 business days depending on your location.</p>
+        </div>
+
+        <div class="faq-card">
+            <h4>Is online payment safe?</h4>
+            <p>Yes. We use secure technologies and trusted payment gateways.</p>
+        </div>
+
+        <div class="faq-card">
+            <h4>Can I cancel my order?</h4>
+            <p>Yes, before the product is shipped.</p>
+        </div>
+    </div>
+
+    <p class="support-footer">
+        Still stuck? Don’t worry — our support team is just a message away 💬
+    </p>
+
+</div>
+
+{% endblock %}

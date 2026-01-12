@@ -6,56 +6,59 @@
 {% endblock %}
 
 {% block html %}
-<div class="cart-wrapper">
-    <h2 class="cart-title">Your Cart</h2>
+<div class="cart-page">
+
+    <h2 class="cart-title">🛒 Shopping Cart</h2>
 
     {% if data %}
-        <div class="cart-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Product</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
+    <div class="cart-layout">
 
-                <tbody>
-                    {% for items in data %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ items.pname }}</td>
-                        <td>{{ items.pcategory }}</td>
-                        <td>₹ {{ items.price }}</td>
+        <!-- CART ITEMS -->
+        <div class="cart-items">
+            {% for items in data %}
+            <div class="cart-item">
 
-                        <td class="qty">
-                            <a href="{% url 'decrease' items.id %}" class="qty-btn minus">−</a>
-                            <span>{{ items.quantity }}</span>
-                            <a href="{% url 'increase' items.id %}" class="qty-btn plus">+</a>
-                        </td>
+                <div class="item-image">
+                    <img src="{{ items.pimage.url }}" alt="{{ items.pname }}">
+                </div>
 
-                        <td>₹ {{ items.totalPrice }}</td>
+                <div class="item-details">
+                    <h3>{{ items.pname }}</h3>
+                    <p class="category">{{ items.pcategory }}</p>
+                    <p class="price">₹ {{ items.price }}</p>
 
-                        <td>
-                            <a href="{% url 'remove' items.id %}" class="remove-btn">Remove</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    <div class="quantity">
+                        <a href="{% url 'decrease' items.id %}" class="qty-btn minus">−</a>
+                        <span>{{ items.quantity }}</span>
+                        <a href="{% url 'increase' items.id %}" class="qty-btn plus">+</a>
+                    </div>
+                </div>
+
+                <div class="item-total">
+                    <p>Total</p>
+                    <h4>₹ {{ items.totalPrice }}</h4>
+                    <a href="{% url 'remove' items.id %}" class="remove-btn">Remove</a>
+                </div>
+
+            </div>
+            {% endfor %}
         </div>
 
+        <!-- CART SUMMARY -->
         <div class="cart-summary">
-            <h3>Total Amount</h3>
-            <h2>₹ {{ TA }}</h2>
-            <a href="#" class="checkout-btn">Proceed to Checkout</a>
+            <h3>Price Details</h3>
+            <div class="summary-row">
+                <span>Total Amount</span>
+                <span>₹ {{ TA }}</span>
+            </div>
+
+            <a href="{% url 'proceed' %}" class="checkout-btn">Proceed to Checkout</a>
         </div>
+
+    </div>
     {% else %}
         <p class="empty-cart">Your cart is empty 🛒</p>
     {% endif %}
+
 </div>
 {% endblock %}
